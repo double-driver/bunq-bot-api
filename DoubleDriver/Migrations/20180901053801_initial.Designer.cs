@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoubleDriver.Migrations
 {
     [DbContext(typeof(DoubleDriverContext))]
-    [Migration("20180901044650_initial")]
+    [Migration("20180901053801_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DoubleDriver.Dal;
 using DoubleDriver.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,14 +21,14 @@ namespace DoubleDriver.Controllers
             _dbContext = context;
         }
 
-        // GET api/values
+        // GET api/user
         [HttpGet]
         public ActionResult<IEnumerable<BunqUser>> Get()
         {
             return _dbContext.BunqUsers.ToList();
         }
 
-        // GET api/values/5
+        // GET api/user/5
         [HttpGet("{id}")]
         public ActionResult<BunqUser> Get(int id)
         {
@@ -41,7 +42,7 @@ namespace DoubleDriver.Controllers
             return user;
         }
 
-        // POST api/values
+        // POST api/user
         [HttpPost]
         public async Task<ActionResult<BunqUser>> Post([FromBody] BunqUser value)
         {
@@ -80,7 +81,7 @@ namespace DoubleDriver.Controllers
             return BadRequest();
         }
 
-        // DELETE api/values/5
+        // DELETE api/user/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
